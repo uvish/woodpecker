@@ -20,3 +20,17 @@ Clone the repository and run make included in electron forge template
 ```js
 npm run make
 ```
+
+### Running a Test API server
+A sample api server written in golang is present in test-server directory.
+
+To run ,
+1. install golang
+2. On windows or linux run:
+```shell
+go run main.go
+```
+3. In MacOS we can use the above command or directly run the file
+```shell
+./server
+```
