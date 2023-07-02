@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: white;
+            padding: unset;
+        }
+        #logs{
+            padding: 5px;
+            margin: 10px;
+            height: 90%;
+            /* width: 100vw; */
+            color: black;
+            word-wrap: break-word;
+        }
+        button{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="clearLogs()">Clear</button>
+    <div name="logs" id="logs" cols="30" rows="10">
+        <ol id="list"></ol>
+    </div>
+    
+    <script src="logs.js"></script>
+</body>
+</html>

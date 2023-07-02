@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>API Stress Test</title>
+
+  <!-- Stylesheets -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="./styles.css">
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.2.1/dygraph.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.2.1/dygraph.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="title">
+    <h2>WoodPecker</h2>
+    <img src="../../assets/icon.png" alt="" srcset="">
+  </div>
+    <div class="container">
+      <div class="chart">
+        <!-- <canvas class="widget" id="chart"></canvas> -->
+        <div id="div_g" style="width:600px; height:300px;"></div>
+    </div>
+
+        <div class="options">
+
+            <div id="url_div">
+                  <div class="input-group input-group-sm mb-3" id="url_div">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-secondary" id="basic-addon3">URL<span class="required">*</span></span>
+                    </div>
+                    <select class="form-select-sm method" id="method" style="width: 100px;" aria-label=".form-select-sm">
+                      <option disabled>Method</option>
+                      <option selected value="get">GET</option>
+                      <option value="post">POST</option>
+                      <option value="put">PUT</option>
+                      <option value="delete">DELETE</option>
+                      <option value="patch">PATCH</option>
+                    </select>
+                      <input type="text" class="form-control widget" placeholder="https://example.com/users/" id="url" aria-describedby="basic-addon3 basic-addon4">
+                 </div>
+            </div>
+
+            <div id="iterations_div">
+                 <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-secondary" id="basic-addon3">Number of Iterations<span class="required">*</span></span>
+                    </div>
+                        <input class="form-control widget"  aria-describedby="basic-addon3 basic-addon4" type="number" placeholder="" id="iterations" aria-label="Iterations" min="0" step="1" name="Number of Iterations">
+                    </div>
+            </div>
+                        
+
+            <div id="conc_delay">
+                <div class="input-group input-group-sm mb-3" id="conc_delay">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-secondary" id="basic-addon3">Concurrent Users </span>
+                    </div>
+                   <input min="0" step="1" class="form-control widget"  aria-describedby="basic-addon3 basic-addon4"" type="number" placeholder="default 1 User" id="concurrency" aria-label="Concurrent" name="Number of Concurrent Requests">
+                
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-secondary" id="basic-addon3">Delay (ms)</span>
+                  </div>
+                  <input min="0" step="1" class="form-control widget"  aria-describedby="basic-addon3 basic-addon4" type="number" placeholder="b/w each concurrent batch (ms)" id="delay" aria-label="Delay" value="0" name="Delay">
+              </div>
+            </div>
+           
+             <div id="postdata_div">
+                <textarea class="widget" rows="5" type="text" placeholder="Post Data in JSON {'key':'value',...}" id="postdata" name="Post Data"></textarea>
+             </div>
+
+             <div id="headers_div">
+                <textarea name="headers" rows="5" type="text" id="headers" placeholder="Headers in JSON {'header':'value',...}"></textarea>
+             </div>
+           
+            
+            <div class="buttons">
+                <input class="widget btn btn-primary" type="button" value="Start" id="startBtn" onclick="callStart()">
+                <input class="widget btn btn-danger" type="button" value="Stop" onclick="callStop()">
+            </div>
+    
+        </div>
+
+   
+<!-- 
+    <div class="stats">
+        <textarea class="widget" name="Statistics" id="stats" cols="30" rows="10"></textarea>
+    </div> -->
+
+    
+
+    </div>
+   
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="./window.js"></script>
+</body>
+
+</html>
