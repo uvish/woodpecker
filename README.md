@@ -6,7 +6,8 @@ API Load Test tool written in Javascript (Electron JS).
 ## Installation
 Get the latest binary from [releases](https://github.com/uvish/woodpecker/releases/tag/1.0.0).
 
-### Running from source
+### Running from source (requires NodeJS v14+)
+
 Clone the repository
 
 ```shell
