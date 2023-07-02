@@ -24,6 +24,7 @@ const createWindow = () => {
       contextIsolation: false
       // preload: path.join(__dirname, 'preload.js'), 
     },
+    icon: '../assets/icon.png'
   });
   mainWindow.loadFile(path.join(__dirname,'main_window', 'index.html'));
 
