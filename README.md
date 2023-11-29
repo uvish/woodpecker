@@ -13,6 +13,7 @@ Clone the repository
 ```shell
 git clone https://github.com/uvish/woodpecker.git
 cd woodpecker
+npm install
 npm start
 ```
 ### Building from source
